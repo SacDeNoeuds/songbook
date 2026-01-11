@@ -1,0 +1,30 @@
+{
+  "name": "songbook",
+  "version": "0.1.0",
+  "description": "A local-first songbook for personal use",
+  "main": "index.js",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SacDeNoeuds/songbook.git"
+  },
+  "keywords": [
+    "songbook",
+    "local-first"
+  ],
+  "author": "sacdenoeuds.dev@gmail.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/SacDeNoeuds/songbook/issues"
+  },
+  "homepage": "https://github.com/SacDeNoeuds/songbook#readme",
+  "devDependencies": {
+    "@types/node": "^25.0.6",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}
