@@ -1,0 +1,1 @@
+export type ToNumber<T> = T extends `${infer N extends number}` ? N : never

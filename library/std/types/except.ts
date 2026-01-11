@@ -1,0 +1,1 @@
+export type Except<T, Key extends keyof T> = Omit<T, Key>
