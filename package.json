@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
-    "start:front": "npx vite ./app-client"
+    "build:front": "vite build ./app-client",
+    "start:front": "vite ./app-client"
   },
   "repository": {
     "type": "git",

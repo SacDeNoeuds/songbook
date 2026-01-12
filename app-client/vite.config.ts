@@ -15,7 +15,7 @@ const config: UserConfig = {
   },
   build: {
     minify: env === 'production' ? 'terser' : false,
-    outDir: 'client/build',
+    outDir: 'build/',
   },
   server: { port: 1234 },
   worker: { format: 'es' },
@@ -23,7 +23,7 @@ const config: UserConfig = {
   plugins: [
     tsconfigPaths({
       root: path.resolve(__dirname, '..'),
-      projects: ['./library/std/tsconfig.json', './tsconfig.json'],
+      projects: ['./tsconfig.json'],
     }),
     VitePWA({
       manifestFilename: 'manifest.json',
