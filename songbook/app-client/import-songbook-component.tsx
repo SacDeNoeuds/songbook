@@ -1,5 +1,6 @@
+import { maybe } from "@std/adt/maybe"
 import { flow, preventDefault } from "@std/functions"
-import { getTextareaValueFromEvent } from "dom-kit"
+import { getInputFromEvent } from "dom-kit/get-control-value"
 import type { ComponentProps } from "dom-kit/jsx/jsx-runtime"
 import { ImportSongbookModel } from "./import-songbook-model"
 
@@ -25,21 +26,22 @@ export const ImportSongbookForm = ({ model, ...rest }: Props) => {
       a-stacker
       id="import-songbook-form"
       onsubmit={preventDefault(model.import)}
-      disabled={() => !model.result().success}
+      disabled={model.isFormDisabled}
     >
       <fieldset>
-        <label for="import-songbook">Copy-paste the file content here</label>
+        <label for="import-songbook">Load the file content here</label>
 
-        <textarea
-          value={model.value}
-          oninput={flow(getTextareaValueFromEvent, model.value.set)}
-          rows={10}
+        <input
+          type="file"
+          onchange={flow(
+            getInputFromEvent,
+            maybe.map((input) => input.files?.[0]),
+            model.file.set,
+          )}
         />
 
         <small>
-          {() =>
-            model.result().success ? "Invalid JSON snapshot" : "All good ✅"
-          }
+          {() => model.error() || "All good ✅"}
         </small>
       </fieldset>
     </form>

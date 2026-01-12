@@ -9,14 +9,14 @@ fieldset {
   & > small.danger { color: var(--colorDanger); }
 }
 
-input, select, .control, button, .button {
+input:not([type="file"]), select, .control, button, .button {
   --control-height: 2.5rem;
   display: inline-flex;
   align-items: center;
   block-size: var(--control-height);
 }
 
-input, select, textarea, .control {
+input:not([type="file"]), select, textarea, .control {
   border: var(--border-size) solid currentColor;
   border-radius: var(--radius-m);
   inline-size: 100%;

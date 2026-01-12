@@ -1,13 +1,13 @@
-import { maybe } from '@std/adt/maybe'
-import { flow } from '@std/functions'
-import { ConfirmDialog, Dialog } from '@ui-kit/app-client'
+import { maybe } from "@std/adt/maybe"
+import { flow } from "@std/functions"
+import { ConfirmDialog, Dialog } from "@ui-kit/app-client"
 import {
   ImportSongbookForm,
   ImportSongbookSubmitButton,
-} from './import-songbook-component'
-import { SongForm, SongFormSubmitButton } from './song-form'
-import { SongList } from './song-list'
-import type { SongbookModel } from './songbook-model'
+} from "./import-songbook-component"
+import { SongForm, SongFormSubmitButton } from "./song-form"
+import { SongList } from "./song-list"
+import type { SongbookModel } from "./songbook-model"
 
 interface Props {
   model: SongbookModel
@@ -33,7 +33,10 @@ export const SongbookPage = ({ model }: Props) => {
         </div>
       </div>
 
-      <Dialog opened={() => !!model.songFormModel()} onClose={model.closeSongForm}>
+      <Dialog
+        opened={() => !!model.songFormModel()}
+        onClose={model.closeSongForm}
+      >
         <header>
           <h3>Song Form</h3>
         </header>
@@ -62,7 +65,6 @@ export const SongbookPage = ({ model }: Props) => {
       <Dialog
         opened={() => !!model.importFormModel()}
         onClose={model.closeImportForm}
-        onclose={model.closeImportForm}
       >
         <header>
           <h3>Import Songbook</h3>
@@ -82,7 +84,11 @@ export const SongbookPage = ({ model }: Props) => {
           >
             Cancel
           </button>
-          <ImportSongbookSubmitButton />
+          {() => {
+            const form = model.importFormModel()
+            if (!form) return undefined
+            return <ImportSongbookSubmitButton disabled={form.isFormDisabled} />
+          }}
         </footer>
       </Dialog>
     </div>
@@ -97,7 +103,7 @@ const Header = ({ model }: Props) => {
           class="discrete"
           onclick={() => model.asViewer.update((v) => !v)}
         >
-          {() => (model.asViewer() ? 'As editor' : 'As viewer')}
+          {() => (model.asViewer() ? "As editor" : "As viewer")}
         </button>
 
         <button class="discrete" onclick={model.addSong}>
