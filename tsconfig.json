@@ -1,0 +1,25 @@
+{
+  "include": ["app-client/", "auth/", "library/", "songbook/"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "dom-kit/jsx",
+    "paths": {
+      "dom-kit": ["./library/dom-kit/index"],
+      "dom-kit/*": ["./library/dom-kit/*"],
+      "@std/*": ["./library/std/*"],
+      "@auth/*": ["./library/auth/*"],
+      "@songbook/*": ["./library/songbook/*"],
+      "@ui-kit/app-client": ["./app-client/ui-kit/index.ts"],
+      "@app-client/songbook/*": ["./songbook/app-client/*"],
+    }
+  },
+}

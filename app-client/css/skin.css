@@ -1,0 +1,15 @@
+[is-shadowed] { box-shadow: 0 0 15px -5px var(--color-text-light); }
+
+[is-bordered] {
+  --border-size: var(--border-thin-size);
+  --border: var(--border-size) solid currentColor;
+  border: var(--border);
+}
+[is-bordered^="thick"] { --border-size: var(--border-bold-size); }
+[is-bordered$="block-end"] { border: none; border-block-end: var(--border); }
+[is-bordered$="inline-end"] { border: none; border-inline-end: var(--border); }
+
+[is-rounded] { --radius-size: var(--radius-m); border-radius: var(--radius-size); }
+[is-rounded^="l"] { --radius-size: var(--radius-l); }
+[is-rounded$="block-end"] { border-radius: 0 0 var(--radius) var(--radius); }
+[is-rounded$="inline-end"] { border-radius: 0 var(--radius) var(--radius) 0; }

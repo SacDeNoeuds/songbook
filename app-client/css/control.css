@@ -1,0 +1,69 @@
+fieldset {  
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+
+  & label { font-weight: bold; }
+  & .hint { color: var(--color-text-light); }
+  & > small { display: block; }
+  & > small.danger { color: var(--colorDanger); }
+}
+
+input, select, .control, button, .button {
+  --control-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  block-size: var(--control-height);
+}
+
+input, select, textarea, .control {
+  border: var(--border-size) solid currentColor;
+  border-radius: var(--radius-m);
+  inline-size: 100%;
+  padding: 0 var(--space-m);
+  background: var(--color-text-inverted);
+}
+textarea {
+  display: inline-block;
+  border-radius: var(--radius-s);
+}
+
+button, .button {
+  --bg: var(--color-primary);
+  --bg-hover: var(--color-primary-dark);
+  --bg-focus: var(--bg-hover);
+  --color: var(--color-primary-inverted);
+  font-family: inherit;
+  font-weight: bold;
+  background: var(--bg);
+  color: var(--color);
+  border-radius: var(--radius-m);
+  justify-content: center;
+  padding: 0 var(--space-l);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  &:not([disabled], [aria-disabled='true']) {
+    &:hover { background: var(--bg-hover); }
+    &:focus { background: var(--bg-focus); }
+  }
+
+  &.discrete {
+    --bg: var(--grey);
+    --bg-hover: var(--grey-light);
+    --color: var(--white);
+  }
+
+  &.lg { padding: var(--space-l) var(--space-xl); }
+  &.icon {
+    padding: var(--space-s) 0;
+    aspect-ratio: 1;
+    block-size: 2em;
+  }
+  &.close::before {
+    content: '×';
+    display: inline-block;
+    padding-bottom: var(--space-xs);
+  }
+}

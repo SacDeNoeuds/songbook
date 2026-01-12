@@ -1,0 +1,65 @@
+.grid-table {
+  --border: var(--border-thin-size) solid var(--border-color);
+  --column-count: 0;
+  --columns: repeat(var(--column-count), minmax(min-content, 1fr));
+
+  display: grid;
+  grid-template-columns: var(--columns);
+  grid-template-rows: repeat(auto-fit, minmax(min-content, 1fr));
+  overflow-x: auto;
+  
+  & thead, & tbody, & tr { display: contents; }
+  & th, & td {
+    padding: 0.5rem;
+    white-space: preserve-breaks;
+    overflow-x: auto;
+    /* & + th, & + td { border-inline-start: var(--border); } */
+  }
+  & :where(tbody tr > :is(td, th)) { border-block-start: var(--border); }
+  /* & th:first-child, & td:first-child { border-inline-start: var(--border); } */
+
+  & th {
+    font-weight: bold;
+    background-color: #eee;
+  }
+  & [colspan='2'] { grid-column-end: span 2; }
+  & [colspan='3'] { grid-column-end: span 3; }
+  & [colspan='4'] { grid-column-end: span 4; }
+  & [colspan='5'] { grid-column-end: span 5; }
+  & [colspan='6'] { grid-column-end: span 6; }
+  & [colspan='7'] { grid-column-end: span 7; }
+  & [colspan='8'] { grid-column-end: span 8; }
+  & [colspan='9'] { grid-column-end: span 9; }
+  & [colspan='10'] { grid-column-end: span 10; }
+  & [colspan='11'] { grid-column-end: span 11; }
+  & [colspan='12'] { grid-column-end: span 12; }
+
+  & [rowspan='2'] { grid-row-end: span 2; }
+  & [rowspan='3'] { grid-row-end: span 3; }
+  & [rowspan='4'] { grid-row-end: span 4; }
+  & [rowspan='5'] { grid-row-end: span 5; }
+  & [rowspan='6'] { grid-row-end: span 6; }
+  & [rowspan='7'] { grid-row-end: span 7; }
+  & [rowspan='8'] { grid-row-end: span 8; }
+  & [rowspan='9'] { grid-row-end: span 9; }
+  & [rowspan='10'] { grid-row-end: span 10; }
+  & [rowspan='11'] { grid-row-end: span 11; }
+  & [rowspan='13'] { grid-row-end: span 13; }
+  & [rowspan='14'] { grid-row-end: span 14; }
+  & [rowspan='15'] { grid-row-end: span 15; }
+  & [rowspan='16'] { grid-row-end: span 16; }
+  & [rowspan='17'] { grid-row-end: span 17; }
+  & [rowspan='18'] { grid-row-end: span 18; }
+  & [rowspan='19'] { grid-row-end: span 19; }
+  & [rowspan='20'] { grid-row-end: span 20; }
+  & [rowspan='21'] { grid-row-end: span 21; }
+  & [rowspan='22'] { grid-row-end: span 22; }
+}
+
+table.striped {
+  --table-bg-dark: var(--white-dark);
+  --table-bg: var(--white);
+  
+  & tr:nth-child(2n) td { background: var(--table-bg-dark); }
+  & tr:nth-child(2n + 1) td { background: var(--table-bg); }
+}

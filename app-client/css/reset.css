@@ -1,0 +1,14 @@
+/* FIXME: actually add table styles, or even better: style tables using CSS Grid */
+/* *:not(table, thead, tbody, th, td, tr) { */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font: inherit;
+  outline: none;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  font-family: var(--font-default);
+}
+

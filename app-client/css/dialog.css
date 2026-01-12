@@ -1,0 +1,32 @@
+dialog {
+  background: var(--color-text-inverted);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow);
+  padding: var(--space-m);
+  margin: auto;
+  inline-size: min(30em, 80vi);
+  border: none;
+  z-index: 10;
+
+  &:where(.narrow) { inline-size: min(20em, 90vi); }
+  &:where(.large) { inline-size: min(40em, 90vi); }
+
+  &::backdrop {
+    content: "";
+    background: rgba(0,0,0, 0.5);
+    backdrop-filter: blur(2px);
+  }
+
+  & > header {
+    padding-block-end: var(--space-m);
+    border-block-end: var(--border-thin-size) solid currentColor;
+    margin-block-end: var(--space-m);
+  }
+
+  & > footer {
+    padding-block-start: var(--space-m);
+    border-block-start: var(--border-thin-size) solid currentColor;
+    margin-block-start: var(--space-m);
+  }
+}
+

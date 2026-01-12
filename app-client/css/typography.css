@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../design/fonts/AbrilFatface-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../design/fonts/Barlow-Regular.ttf') format('truetype');
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-default);
+  font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: additional-ligatures;
+  letter-spacing: 0.3px;
+}
+
+h1, .h1 { font-size: 2em; font-weight: bold; }
+h2, .h2 { font-size: 1.85em; font-weight: bold; }
+h3, .h3 { font-size: 1.75em; font-weight: bold; }
+h4, .h4 { font-size: 1.5em; font-weight: bold; }
+h5, .h5 { font-size: 1.35em; font-weight: bold; }
+h6, .h6 { font-size: 1.15em; font-weight: bold; }
+p { font-size: 1rem; }
+small, .small { font-size: 0.85em; }
+
+.text-center { text-align: center; }
