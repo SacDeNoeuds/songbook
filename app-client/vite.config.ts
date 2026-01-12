@@ -10,6 +10,7 @@ const { config: appConfig } = await import(`./config.${env}.ts`)
 
 const config: UserConfig = {
   publicDir: './assets',
+  base: env === 'production' ? '/songbook' : undefined,
   define: {
     __CONFIG__: JSON.stringify(appConfig),
   },
